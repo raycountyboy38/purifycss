@@ -62,4 +62,14 @@ describe('purify', function(){
     expect(result.indexOf('testFoo') > -1).to.equal(true);
     expect(result.indexOf('camelCase') > -1).to.equal(true);
   });
+
+  it('works with attribute selectors', function(){
+    var content = fs.readFileSync(absPath + 'attribute_selector/attribute_selector.js', 'utf8');
+    var css = fs.readFileSync(absPath + 'attribute_selector/attribute_selector.css', 'utf8');
+    var result = purify(content, css);
+
+    expect(result.indexOf('font-icon-') > -1).to.equal(true);
+    expect(result.indexOf('center aligned') > -1).to.equal(true);
+    expect(result.indexOf('github') > -1).to.equal(false);
+  });
 });
