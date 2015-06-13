@@ -1,6 +1,6 @@
 {
   "name": "purify-css",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "description": "Removed unused css. Compatible with single-page apps.",
   "main": "./src/purifycss.js",
   "dependencies": {
@@ -38,6 +38,8 @@
   "bugs": {
     "url": "https://github.com/purifycss/purifycss/issues"
   },
-  "bin": "./bin/purifycss",
+  "bin": {
+    "purifycss": "./bin/purifycss"
+  },
   "homepage": "https://github.com/purifycss/purifycss"
 }
