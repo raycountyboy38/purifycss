@@ -72,4 +72,16 @@ describe('purify', function(){
     expect(result.indexOf('center aligned') > -1).to.equal(true);
     expect(result.indexOf('github') > -1).to.equal(false);
   });
+
+  it('works with wildcard, pseudo-elements', function(){
+    var content = fs.readFileSync(absPath + 'wildcard/wildcard.html', 'utf8');
+    var css = fs.readFileSync(absPath + 'wildcard/wildcard.css', 'utf8');
+    var result = purify(content, css);
+
+    expect(result.indexOf('*') > -1).to.equal(true);
+    expect(result.indexOf('before') > -1).to.equal(true);
+    expect(result.indexOf('scrollbar') > -1).to.equal(true);
+    expect(result.indexOf('selection') > -1).to.equal(true);
+    expect(result.indexOf('vertical') > -1).to.equal(true);
+  });
 });

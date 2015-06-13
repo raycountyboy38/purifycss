@@ -122,6 +122,10 @@ CssTree.prototype.filterSelectors = function(classes, htmlEls, ids, attrSelector
           return true;
         }
 
+        if (flatTwig.indexOf('pseudoe') > -1 || flatTwig.indexOf('*') > -1) {
+          return true;
+        }
+
         var isId = flatTwig.indexOf('shash') > -1;
         if(isId){
           for(var k = 0; k < flatTwig.length; k++){
